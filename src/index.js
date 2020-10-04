@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import TeamForm from "./components/TeamForm";
+import Team from "./components/Form";
+import "./index.css";
+
+
 
 function App() {
   const [team, setTeam] = useState([
@@ -26,6 +30,7 @@ function App() {
     <div className="App">
       <h1>Mark's Team</h1>
       <TeamForm addMember={addMember} />
+      <Team team={team} />
     </div>
   );
 }

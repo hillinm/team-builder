@@ -11,12 +11,12 @@ const TeamForm = (props) => {
   };
   return (
     <form onSubmit={submitForm}>
-      <label htmlFor="name">Name:</label>
+      <label id="nameLabel" htmlFor="name">Name:</label>
       <input
         onChange={(event) => {
           setMember({ ...member, [event.target.name]: event.target.value });
         }}
-        id="name"
+        id="memberName"
         type="text"
         placeholder="Enter Name"
         value={member.name}
@@ -34,7 +34,7 @@ const TeamForm = (props) => {
         name="email"
       />
       <label htmlFor="role">Role:</label>
-      <input
+      <select
         onChange={(event) => {
           setMember({ ...member, [event.target.name]: event.target.value });
         }}
@@ -43,7 +43,13 @@ const TeamForm = (props) => {
         placeholder="Enter Role"
         value={member.role}
         name="role"
-      />
+      >
+          <option>Select Role</option>
+          <option>Student</option>
+          <option>Team Lead</option>
+          <option>Hacker</option>
+          <option>Slacker</option>
+      </select>
       <button type="submit">Add Member</button>
     </form>
   );
