@@ -17,6 +17,12 @@ function App() {
 
   console.log(team)
 
+  const deleteMember = (member) => {
+    const originalTeam = [...team]
+    originalTeam.splice(member, 1)
+    setTeam(originalTeam)
+  }
+
   const addMember = (member) => {
     const newMember = {
       name: member.name,
@@ -30,7 +36,8 @@ function App() {
     <div className="App">
       <h1>Mark's Team</h1>
       <TeamForm addMember={addMember} />
-      <Team team={team} />
+      <Team team={team} deleteMember={deleteMember} />
+      
     </div>
   );
 }
